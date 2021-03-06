@@ -1,0 +1,6 @@
+# Complete the solve function below.
+meal_cost = float(input())
+tip = meal_cost * int(input()) / 100
+tax = meal_cost * int(input()) / 100
+total_cost=meal_cost+tip+tax
+print(str(round(total_cost)))

@@ -1,0 +1,19 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import sys
+
+n=int(sys.stdin.readline().strip())
+
+phn_book=dict()
+
+for i in range(n):
+    entry=sys.stdin.readline().strip().split(' ')
+    phn_book[entry[0]]=entry[1]
+    
+query=sys.stdin.readline().strip()
+while query:
+    phn_nbr=phn_book.get(query)
+    if phn_nbr:
+        print(query+ '=' + phn_nbr)
+    else:
+        print('Not found')
+    query=sys.stdin.readline().strip()

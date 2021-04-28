@@ -1,0 +1,42 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+if __name__ =='__main__':
+    n = int(input())
+    
+listofBinaryno=[]
+while True:
+    quest=n//2
+    remain=n%2
+    if remain==0:
+        listofBinaryno.append(remain)
+    else:
+        listofBinaryno.append(remain)
+    n=quest
+    if n==0:
+        break
+listofBinaryno.reverse()
+count=0
+libc =[]
+for i in range(len(listofBinaryno)-1):
+    if listofBinaryno[i] == 1:
+        count += 1
+        
+        if i == len(listofBinaryno)-2:
+            if listofBinaryno[i+1] == 1:
+                count += 1
+                libc.append(count)
+        
+        if listofBinaryno[i + 1] == 0:
+            libc.append(count)
+            count = 0
+            
+libc.sort()
+print(libc[-1])    
+
